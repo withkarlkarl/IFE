@@ -1,0 +1,15 @@
+{
+  "name": "three.js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "browser-sync start --server --files '**/*.css, **/*.js, **/*.html'"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "browser-sync": "^2.18.8"
+  }
+}
