@@ -55,6 +55,8 @@ util.extend(CarControl.prototype, {
             return;
         }
         this.speed += this.speedX;
+
+        this._fire("go", this)
     },
 
     back: function () {
@@ -62,16 +64,22 @@ util.extend(CarControl.prototype, {
             return;
         }
         this.speed -= this.speedX;
+
+        this._fire("back", this)
     },
 
     turnLeft: function () {
         var dir = this.speed >= 0 ? 1 : -1;
         this.turnSpeed = dir * this.turnSpeedX;
+
+        this._fire("turnLeft", this)
     },
 
     turnRight: function () {
         var dir = this.speed >= 0 ? 1 : -1;
         this.turnSpeed = dir * -this.turnSpeedX;
+
+        this._fire("right", this)
     },
 
     clearTurnSpeed: function () {
@@ -81,7 +89,7 @@ util.extend(CarControl.prototype, {
     slowDown: function () {
         var that = this;
         this.slowDownTimer = setInterval(function () {
-                that.speed -= that.speed * this.slowDownSpeedX;
+                that.speed -= that.speed * that.slowDownSpeedX;
 
                 if(Math.abs(that.speed) <= 0.1) {
                     that.speed = 0
