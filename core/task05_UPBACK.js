@@ -244,7 +244,7 @@ function carControls() {
     var moveSpeed = 1;
     var turnSpeed = Math.PI / 180;
 
-    var offsetAngle = 0 ;
+    var offsetAngle = 0;
     var animateStep = 2;
     var isAnimate = false;
 
@@ -252,7 +252,7 @@ function carControls() {
         isAnimate = true;
 
         var nowTime = getTime();
-        if(!!preTime) {
+        if (!!preTime) {
             duration = nowTime - preTime;
         }
         animateStep = duration / (1000 / 60)
@@ -260,7 +260,7 @@ function carControls() {
 
         var keys = keyGroup.keys;
         keys.forEach(function (item) {
-            switch(item) {
+            switch (item) {
                 case "87":
                     go()
                     break;
@@ -311,34 +311,6 @@ function carControls() {
         car.position.z += incZ;
 
         renderer.render(scene, camera)
-    }
-    
-    
-    function animated() {
-        if( !incX && !incZ ) {
-            return ;
-        }
-
-        // var offsetAngleStep = turnSpeed / animateStep;
-        var incXStep = incX / animateStep;
-        var incZStep = incZ / animateStep;
-
-        // car.rotation.y += offsetAngleStep;
-        car.position.x += incXStep;
-        car.position.z += incZStep;
-
-        incX -= incXStep
-        incZ -= incZStep
-
-        console.log(incX, incZ)
-
-        renderer.render(scene, camera)
-
-        rAF(animated)
-    }
-
-    function carUpdate() {
-        var angle = Math.PI / 2;
     }
 }
 

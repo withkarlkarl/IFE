@@ -22,7 +22,7 @@ function init() {
 
 function perspective() {
     camera = new THREE.PerspectiveCamera(45, 400 / 300, 1, 100)
-    camera.position.set(-30, 30, 30);
+    camera.position.set(-40, 40, 40);
     camera.lookAt(new THREE.Vector3(0, 0, 0))
 
     scene.add(camera);

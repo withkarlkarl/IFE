@@ -137,7 +137,6 @@ function addStreetLamp() {
         new THREE.MeshPhongMaterial({
             color: "#c9c9c9",
             emissive: "#999"
-
         })
     )
     
