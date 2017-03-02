@@ -90,6 +90,7 @@ util.extend(CarControl.prototype, {
         var that = this;
         this.slowDownTimer = setInterval(function () {
                 that.speed -= that.speed * that.slowDownSpeedX;
+                console.log(this.speed)
 
                 if(Math.abs(that.speed) <= 0.1) {
                     that.speed = 0
@@ -151,11 +152,10 @@ util.extend(CarControl.prototype, {
         else {
             switch(e.keyCode) {
                 case 87:
+                case 83:
                     this.slowDown();
                     break;
                 case 65:
-                    this.clearTurnSpeed();
-                    break;
                 case 68:
                     this.clearTurnSpeed();
                     break;
