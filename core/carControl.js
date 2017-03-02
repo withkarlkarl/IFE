@@ -8,12 +8,12 @@ var CarControl = function (car) {
 
     this.car = car;
     this.speedX = 2;
-    this.turnSpeedX = Math.PI / 10;
-    this.slowDownSpeedX = .3;
+    this.turnSpeedX = Math.PI / 5;
+    this.slowDownSpeedX = 0.1;
 
     this.speed = 0;
-    this.maxSpeed = 20;
-    this.minSpeed = -20;
+    this.maxSpeed = 50;
+    this.minSpeed = -50;
     this.turnSpeed = 0;
 
     this.slowDownSpeed = 1;
@@ -36,7 +36,6 @@ util.extend(CarControl.prototype, {
     
     initEvent: function () {
         document.addEventListener("keydown", this)
-
         document.addEventListener("keyup", this)
     },
 
@@ -91,13 +90,13 @@ util.extend(CarControl.prototype, {
         this.slowDownTimer = setInterval(function () {
                 that.speed -= that.speed * that.slowDownSpeedX;
 
-                if(Math.abs(that.speed) <= 0.1) {
+                if(Math.abs(that.speed) <= 1) {
                     that.speed = 0
 
                     that.cancelSlowDown();
                 }
         },
-        300)
+        1000 / 60)
     },
 
     cancelSlowDown: function () {

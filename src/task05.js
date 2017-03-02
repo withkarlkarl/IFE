@@ -40,14 +40,14 @@ function debug() {
 
 function perspective() {
     camera = new THREE.PerspectiveCamera(45, 400 / 300, 1, 1000)
-    camera.position.set(-60, 50, 0);
+    camera.position.set(-120, 60, 60);
     camera.lookAt(new THREE.Vector3(0, 0, 0))
 
     scene.add(camera);
 }
 
 function addPlane() {
-    var mesh = new THREE.Mesh(new THREE.PlaneGeometry(100, 100),
+    var mesh = new THREE.Mesh(new THREE.PlaneGeometry(1000, 1000),
         new THREE.MeshPhongMaterial({
             color: "#a1b578"
         })
@@ -165,8 +165,11 @@ function addStreetLamp() {
     var pointLight = addPoint();
     pointLight.position.set(-15, 10, 15);
 
-    scene.add(head);
-    scene.add(body)
+    var streetLamp = new THREE.Object3D();
+    streetLamp.position.set(-20, 0 , 20);
+    streetLamp.add(head, body, pointLight);
+
+    scene.add(streetLamp);
 }
 
 function setCubeImgMaterial(imgs, o) {
