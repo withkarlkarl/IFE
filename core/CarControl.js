@@ -16,7 +16,7 @@ var CarControl = function (car) {
     this.minSpeed = -50;
 
     this.turnSpeed = 0;
-    this.turnSpeedX = Math.PI / 6;
+    this.turnSpeedX = Math.PI / 3;
     this.turnAngle = 0;
 
     this.slowDownSpeed = 1;
@@ -130,7 +130,10 @@ util.extend(CarControl.prototype, {
         })
 
         if(Math.abs(this.speed) > 0 ) {
-            this.car.rotation.y += this.turnAngle / 60 * this.dir;
+
+            this.car.rotation.y += this.turnAngle / 60
+                * this.dir
+                * (Math.abs(this.speed) /this.maxSpeed);
         }
 
         this.car.position.x += incX;

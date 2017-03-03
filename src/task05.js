@@ -1,7 +1,7 @@
 /**
  * Created by SunJ on 2017/2/27.
  */
-var renderer, scene, camera, floor, car, light;
+var renderer, scene, camera, floor, car, frontWheel, light;
 
 init();
 
@@ -40,7 +40,7 @@ function debug() {
 
 function perspective() {
     camera = new THREE.PerspectiveCamera(45, 400 / 300, 1, 1000)
-    camera.position.set(-120, 60, 60);
+    camera.position.set(-120, 120, 60);
     camera.lookAt(new THREE.Vector3(0, 0, 0))
 
     scene.add(camera);
