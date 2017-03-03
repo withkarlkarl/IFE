@@ -7,14 +7,17 @@ var CarControl = function (car) {
     EventEmitter.call(this)
 
     this.car = car;
+    this.frontWheel = [this.car.children[3], this.car.children[5]];
     this.speedX = 2;
-    this.turnSpeedX = Math.PI / 5;
     this.slowDownSpeedX = 0.1;
 
     this.speed = 0;
     this.maxSpeed = 50;
     this.minSpeed = -50;
+
     this.turnSpeed = 0;
+    this.turnSpeedX = Math.PI / 6;
+    this.turnAngle = 0;
 
     this.slowDownSpeed = 1;
     this.slowDownTimer = null;
@@ -33,7 +36,7 @@ util.extend(CarControl.prototype, {
 
         this.animate();
     },
-    
+
     initEvent: function () {
         document.addEventListener("keydown", this)
         document.addEventListener("keyup", this)
@@ -46,6 +49,12 @@ util.extend(CarControl.prototype, {
     },
 
     load: function () {
+        this.initialFrontWheelAngle = this.frontWheel[0].rotation.y
+        this.maxTurnAngle = Math.PI / 6 + this.initialFrontWheelAngle;
+        this.minTurnAngle = -Math.PI / 6 + this.initialFrontWheelAngle;
+
+        console.log(this.maxTurnAngle)
+
         this.keyGroup = new KeyGroup();
     },
 
@@ -68,15 +77,13 @@ util.extend(CarControl.prototype, {
     },
 
     turnLeft: function () {
-        var dir = this.speed >= 0 ? 1 : -1;
-        this.turnSpeed = dir * this.turnSpeedX;
+        this.turnSpeed = this.turnSpeedX;
 
         this._fire("turnLeft", this)
     },
 
     turnRight: function () {
-        var dir = this.speed >= 0 ? 1 : -1;
-        this.turnSpeed = dir * -this.turnSpeedX;
+        this.turnSpeed = - this.turnSpeedX;
 
         this._fire("right", this)
     },
@@ -107,12 +114,25 @@ util.extend(CarControl.prototype, {
 
     animate: function () {
         this.stats.begin();
+        this.dir = this.speed / Math.abs(this.speed);
         var offsetAngle =  this.car.rotation.y;
         var incX = -Math.sin(offsetAngle) * this.speed / 60;
         var incZ = -Math.cos(offsetAngle) * this.speed / 60;
-        var incAngle = this.turnSpeed / 60;
 
-        this.car.rotation.y += incAngle;
+        var that = this;
+        this.frontWheel.forEach(function (item) {
+            if(that.turnSpeed > 0 && item.rotation.y < that.maxTurnAngle
+                || that.turnSpeed < 0 && item.rotation.y > that.minTurnAngle) {
+
+                item.rotation.y += that.turnSpeed / 60;
+                that.turnAngle = item.rotation.y - that.initialFrontWheelAngle;
+            }
+        })
+
+        if(Math.abs(this.speed) > 0 ) {
+            this.car.rotation.y += this.turnAngle / 60 * this.dir;
+        }
+
         this.car.position.x += incX;
         this.car.position.z += incZ;
 
