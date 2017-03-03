@@ -1,6 +1,7 @@
 /**
  * Created by SunJ on 2017/2/27.
  */
+var rAF = util.rAF;
 var renderer, scene, camera, floor, car, frontWheel, light;
 
 init();
@@ -201,7 +202,6 @@ function setImgMaterial(img , o) {
     var loader = new THREE.TextureLoader();
 
     loader.load(img , function (texture) {
-
         var material = new THREE.MeshBasicMaterial({
             map: texture
         })

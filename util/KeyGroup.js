@@ -1,53 +1,58 @@
-/**
- * 同时按下多个键，
- * 键位信息保存在实例的keys下
- *
- * @constructor
- */
-var KeyGroup = function () {
+(function (window) {
 
-    this.keysStatus = {};
+    /**
+     * 同时按下多个键，
+     * 键位信息保存在实例的keys下
+     *
+     * @constructor
+     */
+    var KeyGroup = function () {
 
-    this.keys = [];
+        this.keysStatus = {};
 
-    this.init()
-}
+        this.keys = [];
 
-KeyGroup.prototype.init = function () {
-    this.keyDown();
-    this.keyUp();
-}
+        this.init()
+    }
 
-KeyGroup.prototype.keyDown = function (e) {
-    var that = this;
-    document.addEventListener("keydown", function (e) {
-        var evt = e || window.event;
+    KeyGroup.prototype.init = function () {
+        this.keyDown();
+        this.keyUp();
+    }
 
-        that.keysStatus[evt.keyCode] = true;
+    KeyGroup.prototype.keyDown = function (e) {
+        var that = this;
+        document.addEventListener("keydown", function (e) {
+            var evt = e || window.event;
 
-        that.updateKeys();
-    })
-}
+            that.keysStatus[evt.keyCode] = true;
 
-KeyGroup.prototype.keyUp = function (e) {
-    var that = this;
-    document.addEventListener("keyup", function (e) {
-        var evt = e || window.event;
+            that.updateKeys();
+        })
+    }
 
-        that.keysStatus[evt.keyCode] = false;
+    KeyGroup.prototype.keyUp = function (e) {
+        var that = this;
+        document.addEventListener("keyup", function (e) {
+            var evt = e || window.event;
 
-        that.updateKeys();
-    })
-}
+            that.keysStatus[evt.keyCode] = false;
 
-KeyGroup.prototype.updateKeys = function () {
-    this.keys = [];
+            that.updateKeys();
+        })
+    }
 
-    for ( var k in this.keysStatus ) {
-        if ( !!this.keysStatus[k] ) {
-            this.keys.push(k)
+    KeyGroup.prototype.updateKeys = function () {
+        this.keys = [];
+
+        for ( var k in this.keysStatus ) {
+            if ( !!this.keysStatus[k] ) {
+                this.keys.push(k)
+            }
         }
     }
-}
 
-window.keyGroup = KeyGroup;
+    window.KeyGroup = KeyGroup;
+
+})(window)
+
