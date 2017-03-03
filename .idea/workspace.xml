@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3a4a1bd-fc97-41a9-b8a8-3a76301965fc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/CarControl.js" afterPath="$PROJECT_DIR$/core/CarControl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/task05.html" afterPath="$PROJECT_DIR$/demo/task05.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/util/EventEmitter.js" afterPath="$PROJECT_DIR$/util/EventEmitter.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -44,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="task05.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="task05.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/task05.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-912">
-              <caret line="3" column="51" lean-forward="false" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="51" />
+            <state relative-caret-position="19">
+              <caret line="178" column="0" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -57,8 +57,8 @@
       <file leaf-file-name="CarControl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/CarControl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="74" column="6" lean-forward="true" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
+            <state relative-caret-position="821">
+              <caret line="131" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -79,7 +79,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="475">
               <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-              <folding />
+              <folding>
+                <marker date="1488525775179" expanded="true" signature="31:888" ph="..." />
+                <marker date="1488525775179" expanded="true" signature="307:880" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -114,11 +117,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventEmitter.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EventEmitter.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/util/EventEmitter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="51" lean-forward="false" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
+            <state relative-caret-position="589">
+              <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -202,14 +205,14 @@
         <option value="$PROJECT_DIR$/core/task05_UPBACK.js" />
         <option value="$PROJECT_DIR$/src/task01.js" />
         <option value="$PROJECT_DIR$/core/carContorl.js" />
-        <option value="$PROJECT_DIR$/util/EventEmitter.js" />
         <option value="$PROJECT_DIR$/util/util.js" />
         <option value="$PROJECT_DIR$/util/KeyGroup.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/task05.js" />
         <option value="$PROJECT_DIR$/core/carControl.js" />
         <option value="$PROJECT_DIR$/core/CarControl.js" />
         <option value="$PROJECT_DIR$/demo/task05.html" />
+        <option value="$PROJECT_DIR$/src/task05.js" />
+        <option value="$PROJECT_DIR$/util/EventEmitter.js" />
       </list>
     </option>
   </component>
@@ -220,9 +223,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="831" />
-    <option name="y" value="43" />
-    <option name="width" value="1324" />
+    <option name="x" value="450" />
+    <option name="width" value="1457" />
     <option name="height" value="1080" />
   </component>
   <component name="ProjectView">
@@ -467,18 +469,18 @@
       <workItem from="1488444057403" duration="7073000" />
       <workItem from="1488516158445" duration="613000" />
       <workItem from="1488516864357" duration="52000" />
-      <workItem from="1488517636679" duration="8239000" />
+      <workItem from="1488517636679" duration="9738000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109233000" />
+    <option name="totallyTimeSpent" value="110732000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="831" y="43" width="1324" height="1080" extended-state="0" />
+    <frame x="450" y="0" width="1457" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36625195" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36575052" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -722,14 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/EventEmitter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="51" lean-forward="false" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -738,19 +732,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo/task05.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
           <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-          <folding />
+          <folding>
+            <marker date="1488525775179" expanded="true" signature="31:888" ph="..." />
+            <marker date="1488525775179" expanded="true" signature="307:880" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -788,16 +777,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/CarControl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="74" column="6" lean-forward="true" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
+        <state relative-caret-position="821">
+          <caret line="131" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/task05.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-912">
-          <caret line="3" column="51" lean-forward="false" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="51" />
+        <state relative-caret-position="19">
+          <caret line="178" column="0" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/EventEmitter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding />
         </state>
       </provider>
