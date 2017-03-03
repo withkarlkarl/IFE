@@ -21,6 +21,7 @@ var CarControl = function (car) {
 
     this.slowDownSpeed = 1;
     this.slowDownTimer = null;
+    this.clearTurnTimer = null;
 
     this.init()
 }
@@ -53,8 +54,6 @@ util.extend(CarControl.prototype, {
         this.maxTurnAngle = Math.PI / 6 + this.initialFrontWheelAngle;
         this.minTurnAngle = -Math.PI / 6 + this.initialFrontWheelAngle;
 
-        console.log(this.maxTurnAngle)
-
         this.keyGroup = new KeyGroup();
     },
 
@@ -76,20 +75,51 @@ util.extend(CarControl.prototype, {
         this._fire("back", this)
     },
 
-    turnLeft: function () {
-        this.turnSpeed = this.turnSpeedX;
+    turnLeft: function (co) {
+        var co = co || 1;
+        this.turnSpeed = this.turnSpeedX * co;
 
         this._fire("turnLeft", this)
     },
 
-    turnRight: function () {
-        this.turnSpeed = - this.turnSpeedX;
+    turnRight: function (co) {
+        var co = co || 1;
+        this.turnSpeed = - this.turnSpeedX * co;
 
         this._fire("right", this)
     },
 
     clearTurnSpeed: function () {
         this.turnSpeed = 0;
+    },
+
+    clearTurn: function () {
+        var that = this;
+        this.clearTurnTimer = setInterval(function () {
+            if(!that.speed) return;
+
+                if( Math.abs(that.turnAngle) < Math.PI / 60 ) {
+                    that.turnAngle = 0;
+                    that.clearTurnSpeed();
+                    that.cancelClearTurn();
+                    return;
+                }
+
+                if(that.turnAngle > 0){
+                    that.turnRight(0.2)
+                }
+
+                if(that.turnAngle < 0) {
+                    that.turnLeft(0.2)
+                }
+            },
+            1000 / 60)
+    },
+
+    cancelClearTurn: function () {
+        clearInterval(this.clearTurnTimer);
+
+        this.clearTurnTimer = null;
     },
 
     slowDown: function () {
@@ -163,9 +193,11 @@ util.extend(CarControl.prototype, {
                         break;
                     case 65:
                         that.turnLeft()
+                        that.cancelClearTurn()
                         break;
                     case 68:
                         that.turnRight()
+                        that.cancelClearTurn()
                         break;
                 }
             })
@@ -179,6 +211,7 @@ util.extend(CarControl.prototype, {
                 case 65:
                 case 68:
                     this.clearTurnSpeed();
+                    this.clearTurn()
                     break;
 
             }
