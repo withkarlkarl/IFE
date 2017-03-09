@@ -19,7 +19,7 @@
         this.minSpeed = -50;
 
         this.turnSpeed = 0;
-        this.turnSpeedX = Math.PI / 3;
+        this.turnSpeedX = Math.PI / 2;
         this.turnAngle = 0;
 
         this.clearTurnX = 0.1;
@@ -145,6 +145,7 @@
 
         animate: function () {
             this.stats.begin();
+
             this.dir = this.speed / Math.abs(this.speed);
             this.offsetAngle =  this.car.rotation.y;
             var incX = -Math.sin(this.offsetAngle) * this.speed / 60;
@@ -192,6 +193,7 @@
             }
 
             renderer.render(scene, camera)
+
             this.stats.end()
             rAF(this.animate.bind(this))
         },
