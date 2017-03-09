@@ -114,11 +114,11 @@
                 }
 
                 if (this.turnAngle > 0) {
-                    this.turnRight(.2)
+                    this.turnRight(.1)
                 }
 
                 if (this.turnAngle < 0) {
-                    this.turnLeft(.2)
+                    this.turnLeft(.1)
                 }
             }
         },
